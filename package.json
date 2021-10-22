@@ -1,0 +1,31 @@
+{
+  "name": "modalify",
+  "type": "module",
+  "version": "0.0.0",
+  "description": "WCAG compliant, mobile ready, framework agnostic modal dialogs implementation",
+  "author": "Alexey Raspopov",
+  "license": "ISC",
+  "homepage": "https://alexeyraspopov.github.io/modalify",
+  "repository": "alexeyraspopov/modalify",
+  "keywords": [
+    "accessibility",
+    "dialog",
+    "modal",
+    "wcag"
+  ],
+  "scripts": {
+    "test": "playwright test",
+    "build": "rollup --config rollup.config.js",
+    "serve": "http-server ."
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.16.0",
+    "@rollup/plugin-multi-entry": "^4.1.0",
+    "http-server": "^14.0.0",
+    "playwright-webkit": "^1.16.0",
+    "prettier": "^2.4.1",
+    "rollup": "^2.58.0",
+    "rollup-plugin-bundle-size": "^1.0.3",
+    "rollup-plugin-copy": "^3.4.0"
+  }
+}

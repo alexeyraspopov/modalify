@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="/modules/defaults.css" />
+    <style>
+      body {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="content" style="width: 400px; height: 3000px; background: skyblue">
+      <div>hello</div>
+      <div>hello</div>
+      <div>hello</div>
+      <div>hello</div>
+      <div id="toggle">toggle</div>
+    </section>
+    <script type="module">
+      import { lockScroll } from '/modules/lockScroll.js';
+      let toggle = document.querySelector('#toggle');
+      let lock;
+      toggle.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        if (lock != null) {
+          lock.release();
+        } else {
+          lock = lockScroll();
+        }
+      });
+    </script>
+  </body>
+</html>
