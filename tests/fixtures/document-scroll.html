@@ -19,17 +19,13 @@
       <div id="toggle">toggle</div>
     </section>
     <script type="module">
-      import { lockScroll } from '/modules/lockScroll.js';
+      import { setDocumentScroll } from '/modules/setDocumentScroll.js';
       let toggle = document.querySelector('#toggle');
-      let lock;
+      let enabled = true;
       toggle.addEventListener('click', (event) => {
         event.preventDefault();
         event.stopPropagation();
-        if (lock != null) {
-          lock.release();
-        } else {
-          lock = lockScroll();
-        }
+        enabled = setDocumentScroll({ enabled: !enabled });
       });
     </script>
   </body>

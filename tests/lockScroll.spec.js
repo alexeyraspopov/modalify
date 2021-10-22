@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('scroll lock toggle', async ({ page }) => {
-  await page.goto('http://localhost:8080/tests/fixtures/');
+  await page.goto('http://localhost:8080/tests/fixtures/document-scroll.html');
   let block = page.locator('#content');
   let toggle = page.locator('#toggle');
 
