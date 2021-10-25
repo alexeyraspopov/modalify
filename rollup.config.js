@@ -1,6 +1,7 @@
 import copy from 'rollup-plugin-copy';
 import size from 'rollup-plugin-bundle-size';
 import multi from '@rollup/plugin-multi-entry';
+
 export default {
   input: 'modules/*.js',
   output: [
@@ -12,7 +13,7 @@ export default {
     copy({
       targets: [
         { src: 'LICENSE', dest: 'build' },
-        { src: 'modules/defaults.css', dest: 'build' },
+        { src: 'modules/*.css', dest: 'build' },
         { src: 'package.json', dest: 'build', transform: generatePkg },
       ],
     }),
