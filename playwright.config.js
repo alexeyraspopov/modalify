@@ -1,17 +1,18 @@
 import { devices } from '@playwright/test';
 
+let isCI = !!process.env.CI;
+
 export default {
   testDir: 'tests',
-  projects: [
-    {
-      name: 'Safari',
-      use: { ...devices['Desktop Safari'], headless: !!process.env.CI },
-    },
-  ],
+  use: {
+    ...devices['Desktop Safari'],
+    headless: isCI,
+    trace: 'retain-on-failure',
+  },
+  reporter: isCI ? [['github'], ['dot']] : 'list',
   webServer: {
     command: 'npm run serve',
-    port: 8080,
-    timeout: 10 * 1000,
-    reuseExistingServer: !process.env.CI,
+    port: 5000,
+    reuseExistingServer: !isCI,
   },
 };
